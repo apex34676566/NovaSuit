@@ -1,0 +1,12 @@
+[submodule "src/crm/espocrm"]
+	path = src/crm/espocrm
+	url = https://github.com/yoshco/ESP-CRM.git
+[submodule "src/finance/firefly-iii"]
+	path = src/finance/firefly-iii
+	url = https://github.com/firefly-iii/firefly-iii.git
+[submodule "src/core/erpnext"]
+	path = src/core/erpnext
+	url = https://github.com/frappe/erpnext.git
+[submodule "src/core/frappe"]
+	path = src/core/frappe
+	url = https://github.com/frappe/frappe.git
