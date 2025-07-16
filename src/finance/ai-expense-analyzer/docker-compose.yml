@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  ai-expense-analyzer:
+    build: .
+    container_name: ai-expense-analyzer
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://ai_user:ai_password@postgres:5432/ai_expense_analyzer
+      - REDIS_URL=redis://redis:6379
+      - FIREFLY_III_URL=http://firefly:8080
+      - FIREFLY_III_TOKEN=${FIREFLY_III_TOKEN}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - SECRET_KEY=${SECRET_KEY:-default_secret_key_change_in_production}
+    depends_on:
+      - postgres
+      - redis
+    restart: unless-stopped
+    volumes:
+      - ./logs:/app/logs
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: ai-expense-postgres
+    environment:
+      - POSTGRES_DB=ai_expense_analyzer
+      - POSTGRES_USER=ai_user
+      - POSTGRES_PASSWORD=ai_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: ai-expense-redis
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+  # Optional: Si quieres incluir Firefly III en el mismo stack
+  # firefly:
+  #   image: fireflyiii/core:latest
+  #   container_name: firefly-iii
+  #   environment:
+  #     - APP_KEY=${FIREFLY_APP_KEY}
+  #     - DB_CONNECTION=pgsql
+  #     - DB_HOST=firefly-postgres
+  #     - DB_PORT=5432
+  #     - DB_DATABASE=firefly
+  #     - DB_USERNAME=firefly
+  #     - DB_PASSWORD=firefly_password
+  #   ports:
+  #     - "8080:8080"
+  #   depends_on:
+  #     - firefly-postgres
+  #   restart: unless-stopped
+
+  # firefly-postgres:
+  #   image: postgres:15-alpine
+  #   container_name: firefly-postgres
+  #   environment:
+  #     - POSTGRES_DB=firefly
+  #     - POSTGRES_USER=firefly
+  #     - POSTGRES_PASSWORD=firefly_password
+  #   volumes:
+  #     - firefly_postgres_data:/var/lib/postgresql/data
+  #   restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:
+  # firefly_postgres_data:
+
+networks:
+  default:
+    name: novasuite-ai
