@@ -1,0 +1,6 @@
+company_name,email_address,phone_number,mobile_number,street_address,city,state,postal_code,country,tax_number,first_name,last_name,website,industry,annual_revenue,employees
+"Acme Corporation","contact@acme.com","(555) 123-4567","(555) 987-6543","123 Main Street","New York","NY","10001","USA","12-3456789","John","Smith","https://acme.com","Technology","1000000","50"
+"Global Tech Solutions","info@globaltech.com","(555) 234-5678","(555) 876-5432","456 Oak Avenue","Los Angeles","CA","90210","USA","98-7654321","Jane","Doe","https://globaltech.com","Consulting","2500000","120"
+"Innovation Labs","hello@innovlabs.com","(555) 345-6789","(555) 765-4321","789 Pine Road","Chicago","IL","60601","USA","11-2233445","Mike","Johnson","https://innovlabs.com","Research","750000","25"
+"NextGen Software","contact@nextgen.com","(555) 456-7890","(555) 654-3210","321 Elm Street","San Francisco","CA","94105","USA","55-6677889","Sarah","Williams","https://nextgen.com","Software","3200000","200"
+"Future Systems Inc","info@futuresys.com","(555) 567-8901","(555) 543-2109","654 Maple Drive","Seattle","WA","98101","USA","33-4455667","David","Brown","https://futuresys.com","Manufacturing","1800000","85"

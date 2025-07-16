@@ -1,0 +1,90 @@
+{
+  "system_type": "zoho_crm",
+  "connection_params": {
+    "access_token": "your_access_token",
+    "refresh_token": "your_refresh_token",
+    "client_id": "your_client_id",
+    "client_secret": "your_client_secret",
+    "module": "Leads",
+    "api_domain": "https://www.zohoapis.com"
+  },
+  "field_mappings": [
+    {
+      "source_field": "first_name",
+      "target_field": "First_Name"
+    },
+    {
+      "source_field": "last_name",
+      "target_field": "Last_Name",
+      "required": true
+    },
+    {
+      "source_field": "company",
+      "target_field": "Company",
+      "required": true
+    },
+    {
+      "source_field": "email",
+      "target_field": "Email",
+      "transform_function": "email"
+    },
+    {
+      "source_field": "phone",
+      "target_field": "Phone",
+      "transform_function": "phone"
+    },
+    {
+      "source_field": "mobile",
+      "target_field": "Mobile",
+      "transform_function": "phone"
+    },
+    {
+      "source_field": "website",
+      "target_field": "Website"
+    },
+    {
+      "source_field": "industry",
+      "target_field": "Industry"
+    },
+    {
+      "source_field": "lead_source",
+      "target_field": "Lead_Source"
+    },
+    {
+      "source_field": "",
+      "target_field": "Lead_Status",
+      "default_value": "Not Contacted"
+    },
+    {
+      "source_field": "annual_revenue",
+      "target_field": "Annual_Revenue",
+      "transform_function": "currency"
+    },
+    {
+      "source_field": "employees",
+      "target_field": "No_of_Employees",
+      "transform_function": "int"
+    },
+    {
+      "source_field": "street",
+      "target_field": "Street"
+    },
+    {
+      "source_field": "city",
+      "target_field": "City"
+    },
+    {
+      "source_field": "state",
+      "target_field": "State"
+    },
+    {
+      "source_field": "zip_code",
+      "target_field": "Zip_Code"
+    },
+    {
+      "source_field": "country",
+      "target_field": "Country"
+    }
+  ],
+  "batch_size": 100
+}

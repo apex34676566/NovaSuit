@@ -1,0 +1,36 @@
+# NovaSuite-AI Data Integration Requirements
+
+# Core dependencies
+pandas>=1.5.0
+requests>=2.28.0
+click>=8.0.0
+
+# Data validation and processing
+jsonschema>=4.0.0
+python-dateutil>=2.8.0
+
+# Optional dependencies for specific systems
+# Uncomment as needed:
+
+# For advanced Excel support
+# openpyxl>=3.0.0
+# xlsxwriter>=3.0.0
+
+# For database connections
+# sqlalchemy>=1.4.0
+# psycopg2-binary>=2.9.0  # PostgreSQL
+# pymysql>=1.0.0          # MySQL
+# cx-Oracle>=8.0.0        # Oracle
+
+# For enhanced CSV processing
+# chardet>=5.0.0          # Character encoding detection
+
+# For XML processing
+# lxml>=4.9.0
+
+# Development dependencies (for testing and development)
+# pytest>=7.0.0
+# pytest-cov>=4.0.0
+# black>=22.0.0
+# flake8>=5.0.0
+# mypy>=0.991
