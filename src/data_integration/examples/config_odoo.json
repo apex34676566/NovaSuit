@@ -1,0 +1,75 @@
+{
+  "system_type": "odoo",
+  "connection_params": {
+    "odoo_url": "https://your-odoo-instance.com",
+    "database": "your_database",
+    "username": "your_username",
+    "password": "your_password",
+    "model": "res.partner"
+  },
+  "field_mappings": [
+    {
+      "source_field": "company_name",
+      "target_field": "name",
+      "required": true
+    },
+    {
+      "source_field": "email_address",
+      "target_field": "email",
+      "transform_function": "email"
+    },
+    {
+      "source_field": "phone_number",
+      "target_field": "phone",
+      "transform_function": "phone"
+    },
+    {
+      "source_field": "mobile_number",
+      "target_field": "mobile",
+      "transform_function": "phone"
+    },
+    {
+      "source_field": "street_address",
+      "target_field": "street"
+    },
+    {
+      "source_field": "city",
+      "target_field": "city"
+    },
+    {
+      "source_field": "state",
+      "target_field": "state_id"
+    },
+    {
+      "source_field": "postal_code",
+      "target_field": "zip"
+    },
+    {
+      "source_field": "country",
+      "target_field": "country_id"
+    },
+    {
+      "source_field": "tax_number",
+      "target_field": "vat"
+    },
+    {
+      "source_field": "",
+      "target_field": "is_company",
+      "default_value": true,
+      "transform_function": "bool"
+    },
+    {
+      "source_field": "",
+      "target_field": "customer",
+      "default_value": true,
+      "transform_function": "bool"
+    },
+    {
+      "source_field": "",
+      "target_field": "supplier",
+      "default_value": false,
+      "transform_function": "bool"
+    }
+  ],
+  "batch_size": 100
+}
